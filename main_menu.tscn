@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://pxvufo3s1uqj"]
+[gd_scene load_steps=3 format=3 uid="uid://pxvufo3s1uqj"]
 
 [ext_resource type="Script" uid="uid://c4xjh1dau03je" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bmtubfkcrb4qt" path="res://Assets/monochrome-caves/bw.png" id="2_7vrkn"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -29,6 +30,12 @@ text = "Options"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+
+[node name="Bw" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(329, -32.000015)
+scale = Vector2(5, 5)
+texture = ExtResource("2_7vrkn")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
