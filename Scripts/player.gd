@@ -3,6 +3,7 @@ extends Character
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown: Timer = $DashCooldown
 @onready var fall_timer: Timer = $FallTimer
+@onready var dash_sfx: AudioStreamPlayer2D = $Dash
 var is_dashing = false
 var dash_direction: float
 
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle actions.
 	if Input.is_action_just_pressed("Dash") and not is_dashing and dash_cooldown.is_stopped():
+		dash_sfx.play()
 		start_dash(direction)
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		anim.play("Jump")

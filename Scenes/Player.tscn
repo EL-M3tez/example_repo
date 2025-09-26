@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c37r36v6qch5m"]
+[gd_scene load_steps=42 format=3 uid="uid://c37r36v6qch5m"]
 
 [ext_resource type="Script" uid="uid://byavxwoipovmw" path="res://Scripts/player.gd" id="1_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://b2a6tcm0a1tkb" path="res://Assets/monochrome_ninja/monochrome_ninja/dashing/0.png" id="2_8flut"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://djrwl4ijvb4t8" path="res://Assets/monochrome_ninja/monochrome_ninja/jump/3.png" id="20_xixlo"]
 [ext_resource type="Texture2D" uid="uid://dp1h1vep7nuxl" path="res://Assets/monochrome_ninja/monochrome_ninja/jump/4.png" id="21_bfbt0"]
 [ext_resource type="Texture2D" uid="uid://5qdxc86cqj5v" path="res://Assets/monochrome_ninja/monochrome_ninja/run/09.png" id="21_lyrkg"]
+[ext_resource type="AudioStream" uid="uid://dq5a6mw2o3beh" path="res://Assets/woosh-230554.mp3" id="39_pqity"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sg6sq"]
 animations = [{
@@ -189,7 +190,7 @@ Jump_Velocity = -300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sg6sq")
-animation = &"Fall"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -207,3 +208,9 @@ one_shot = true
 
 [node name="FallTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 11.27
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("39_pqity")
