@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://wbajawi3uf5a"]
+
+[ext_resource type="Script" uid="uid://b8n2eagyetypp" path="res://control.gd" id="1_62e2m"]
+[ext_resource type="PackedScene" uid="uid://c37r36v6qch5m" path="res://Scenes/Player.tscn" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://bmtubfkcrb4qt" path="res://Assets/monochrome-caves/bw.png" id="3_qtu10"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = 211.0
+offset_right = 326.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62e2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 101.0
+offset_right = 441.0
+offset_bottom = 177.0
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sacrifice speed"
+
+[node name="Character" parent="VBoxContainer" instance=ExtResource("2_qtu10")]
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sacrifice Jump height"
+
+[node name="Bw" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(320, 20)
+scale = Vector2(5.1289063, 2.7226563)
+texture = ExtResource("3_qtu10")
+
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

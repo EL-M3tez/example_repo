@@ -1,5 +1,5 @@
 extends Control
-const LEVEL_1 = preload("uid://b0dlnig58o1yq")
+const LEVEL_1 = preload("uid://wbajawi3uf5a")
 
 
 func _on_play_pressed() -> void:
