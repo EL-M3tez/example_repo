@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuixx8qcjhs"]
+[gd_scene load_steps=4 format=3 uid="uid://cuixx8qcjhs"]
 
 [ext_resource type="Texture2D" uid="uid://bmtubfkcrb4qt" path="res://Assets/monochrome-caves/bw.png" id="1_8sw8u"]
 [ext_resource type="Script" uid="uid://bxlgy2df8c8hj" path="res://win.gd" id="1_co8qc"]
+[ext_resource type="Script" uid="uid://b24lchtruem02" path="res://button.gd" id="3_j64cp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,3 +31,16 @@ offset_bottom = 485.0
 theme_override_colors/font_color = Color(0.043137256, 0.6431373, 0.011764706, 1)
 theme_override_font_sizes/font_size = 152
 text = "You Win !!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 562.0
+offset_right = 1178.0
+offset_bottom = 635.0
+theme_override_colors/font_color = Color(0.25879213, 0.48964506, 0.2780713, 1)
+theme_override_font_sizes/font_size = 78
+text = "Main Menu"
+script = ExtResource("3_j64cp")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
